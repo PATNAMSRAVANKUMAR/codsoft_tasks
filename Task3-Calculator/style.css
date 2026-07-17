@@ -1,0 +1,170 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at 15% 20%, #0ea5e9 0%, transparent 40%),
+                radial-gradient(circle at 80% 30%, #a78bfa 0%, transparent 45%),
+                radial-gradient(circle at 45% 85%, #22c55e 0%, transparent 50%),
+                #08131f;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Animated "match" background layer */
+.bg-matches {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.35) 0 2px, transparent 3px),
+        radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.35) 0 2px, transparent 3px),
+        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.35) 0 2px, transparent 3px),
+        radial-gradient(circle at 60% 10%, rgba(255, 255, 255, 0.25) 0 1.5px, transparent 3px),
+        radial-gradient(circle at 15% 85%, rgba(255, 159, 10, 0.20) 0 2px, transparent 3px),
+        radial-gradient(circle at 90% 75%, rgba(48, 209, 88, 0.18) 0 2px, transparent 3px);
+    background-size: 220px 220px, 260px 260px, 280px 280px, 240px 240px, 300px 300px, 320px 320px;
+    background-repeat: repeat;
+    filter: saturate(1.1);
+    z-index: -1;
+    pointer-events: none;
+    animation: drift 10s linear infinite;
+}
+
+/* Subtle streaks over the dots */
+.bg-matches::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        135deg,
+        rgba(255, 159, 10, 0.0) 0 12px,
+        rgba(255, 159, 10, 0.12) 12px 13px,
+        rgba(255, 159, 10, 0.0) 13px 28px
+    );
+    opacity: 0.55;
+    animation: streak 3.5s ease-in-out infinite;
+}
+
+@keyframes drift {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(-20px, 15px, 0) scale(1.02); }
+    100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes streak {
+    0%, 100% { opacity: 0.45; }
+    50% { opacity: 0.75; }
+}
+
+
+.calculator {
+    width: 350px;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.display {
+    width: 100%;
+    height: 80px;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* CSS Grid for the buttons alignment */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    height: 65px;
+    border: none;
+    border-radius: 50px;
+    background-color: #333333;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #444444;
+}
+
+/* Special Button Colors */
+.btn.operator {
+    background-color: #ff9f0a;
+    color: white;
+}
+
+.btn.operator:hover {
+    background-color: #cc7f08;
+}
+
+.btn.clear {
+    background-color: #a5a5a5;
+    color: black;
+}
+
+.btn.clear:hover {
+    background-color: #8e8e8e;
+}
+
+/* Custom Spanning for Equal keys */
+.btn.equal {
+    grid-row: span 1;
+    height: 65px;
+    background-color: #30d158;
+}
+
+.btn.equal:hover {
+    background-color: #24a844;
+}
+
+/* circle style for 0 / 00 */
+.btn.zero {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 65px;
+    max-height: 65px;
+    border-radius: 50%;
+    padding-left: 0;
+    text-align: center;
+}
+
+/* keep 00 as circle too */
+.btn.zero00 {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 65px;
+    max-height: 65px;
+    border-radius: 50%;
+    padding-left: 0;
+    text-align: center;
+}
+
+
+
+
+
