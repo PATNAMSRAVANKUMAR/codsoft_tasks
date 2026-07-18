@@ -35,9 +35,9 @@ CODSOFT/
 
 ## 🌐 Live Projects
 
-- 🔗 **Portfolio:** https://patnamsravankumar.github.io/CODSOFT/Task1-Portfolio/
-- 🔗 **Landing Page:** https://patnamsravankumar.github.io/CODSOFT/Task2-Landing-page/
-- 🔗 **Calculator:** https://patnamsravankumar.github.io/CODSOFT/Task3-Calculator/
+- 🔗 **Portfolio:   ** https://patnamsravankumar.github.io/codsoft_tasks/Task1-Portfolio/
+- 🔗 **Landing Page:** https://patnamsravankumar.github.io/codsoft_tasks/Task2-Landing-page/
+- 🔗 **Calculator:  ** https://patnamsravankumar.github.io/codsoft_tasks/Task3-Calculator/
 
 ---
 
